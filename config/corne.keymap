@@ -201,10 +201,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&trans      &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8     &kp N9  &kp N0  &trans
-&caps_word  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none     &kp UP    &none      &none   &trans  &trans
-&trans      &bt BT_CLR    &none         &none         &none         &none           &kp LEFT  &kp DOWN  &kp RIGHT  &none   &trans  &trans
-                                        &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &trans
+&trans      &kp N1  &kp N2  &kp N3    &kp N4  &kp N5       &kp N6    &kp N7    &kp N8     &kp N9  &kp N0     &trans
+&caps_word  &none   &none   &none     &none   &none        &none     &kp UP    &none      &none   &kp MINUS  &trans
+&trans      &none   &none   &none     &none   &none        &kp LEFT  &kp DOWN  &kp RIGHT  &none   &kp EQUAL  &trans
+                            &kp LGUI  &trans  &kp SPACE    &kp RET   &trans    &kp ESC
             >;
         };
 
@@ -228,10 +228,10 @@
         ADJ {
             display-name = "System";
             bindings = <
-&trans  &kp F1        &kp F2        &kp F3        &kp F4      &kp F5            &kp F6  &kp F7  &kp F8  &kp F9  &kp F10      &trans
-&trans  &kp F11       &kp F12       &trans        &trans      &studio_unlock    &trans  &trans  &trans  &trans  &trans       &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR  &bt BT_CLR_ALL    &trans  &trans  &trans  &trans  &bootloader  &trans
-                                    &trans        &trans      &trans            &trans  &trans  &trans
+&none  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &none
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &kp F11  &none
+&none  &bt BT_CLR    &none         &none         &none         &none           &trans  &trans  &trans  &trans  &kp F12  &none
+                                   &trans        &trans        &trans          &trans  &trans  &trans
             >;
         };
 
