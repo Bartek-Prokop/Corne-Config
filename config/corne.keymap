@@ -9,67 +9,6 @@
 #define EXTRA 4
 
 / {
-    behaviors {
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-
-            quick-tap-ms = <180>;
-            global-quick-tap;
-        };
-
-        para: para {
-            compatible = "zmk,behavior-tap-dance";
-            label = "PARA";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
-        };
-
-        caps: caps {
-            compatible = "zmk,behavior-caps-word";
-            label = "CAPS";
-            #binding-cells = <0>;
-            continue-list = <MINUS BACKSPACE>;
-        };
-
-        paraless: paraless {
-            compatible = "zmk,behavior-mod-morph";
-            label = "PARALESS";
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp LESS_THAN>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        paragreat: paragreat {
-            compatible = "zmk,behavior-mod-morph";
-            label = "PARAGREAT";
-            bindings = <&kp RIGHT_PARENTHESIS>, <&kp GREATER_THAN>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-    };
-
-    macros {
-        browsertab: browsertab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp TAB>,
-                <&macro_release>,
-                <&kp LCTRL>;
-        };
-    };
-
     combos { compatible = "zmk,combos"; };
 
     //
@@ -104,10 +43,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&trans      &kp N1            &kp N2  &kp N3    &kp N4  &kp N5       &kp N6    &kp N7    &kp N8     &kp N9  &kp N0     &trans
-&caps_word  &kp LEFT_CONTROL  &none   &none     &none   &none        &none     &kp UP    &none      &none   &kp MINUS  &trans
-&trans      &none             &none   &none     &none   &none        &kp LEFT  &kp DOWN  &kp RIGHT  &none   &kp EQUAL  &trans
-                                      &kp LGUI  &trans  &kp SPACE    &kp RET   &trans    &kp ESC
+&none  &kp N1            &kp N2  &kp N3    &kp N4  &kp N5       &kp N6   &kp N7          &kp N8          &kp N9           &kp N0     &none
+&none  &kp LEFT_CONTROL  &none   &none     &none   &none        &none    &none           &kp UP_ARROW    &none            &kp MINUS  &none
+&none  &none             &none   &none     &none   &none        &none    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp EQUAL  &none
+                                 &kp LGUI  &trans  &kp SPACE    &kp RET  &trans          &kp ESC
             >;
         };
 
@@ -121,10 +60,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp EXCL  &kp DOUBLE_QUOTES  &kp HASH        &kp DLLR         &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK          &kp LEFT_PARENTHESIS  &kp RPAR        &trans
-&trans  &trans    &trans             &kp UP_ARROW    &trans           &kp GRAVE    &kp SEMI   &kp HASH   &kp LBKT           &kp RBKT              &kp UNDERSCORE  &trans
-&trans  &trans    &kp LEFT_ARROW     &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp AT       &kp COLON  &kp TILDE  &kp LBRC           &kp RBRC              &kp PLUS        &trans
-                                     &kp LGUI        &trans           &kp SPACE    &kp RET    &trans     &kp RIGHT_CONTROL
+&none  &kp EXCL  &kp DOUBLE_QUOTES  &kp HASH        &kp DLLR         &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK          &kp LEFT_PARENTHESIS  &kp RPAR        &none
+&none  &trans    &trans             &kp UP_ARROW    &trans           &kp GRAVE    &kp SEMI   &kp HASH   &kp LBKT           &kp RBKT              &kp UNDERSCORE  &none
+&none  &trans    &kp LEFT_ARROW     &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp AT       &kp COLON  &kp TILDE  &kp LBRC           &kp RBRC              &kp PLUS        &none
+                                    &kp LGUI        &trans           &kp SPACE    &kp RET    &trans     &kp RIGHT_CONTROL
             >;
         };
 
@@ -135,16 +74,6 @@
 &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &kp F11  &none
 &none  &bt BT_CLR    &none         &none         &none         &none           &trans  &trans  &trans  &trans  &kp F12  &none
                                    &trans        &trans        &trans          &trans  &trans  &trans
-            >;
-        };
-
-        EXTRA {
-            display-name = "extra";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans       &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans       &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &bootloader  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
