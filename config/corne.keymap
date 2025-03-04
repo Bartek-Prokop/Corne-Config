@@ -9,7 +9,14 @@
 #define EXTRA 4
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        Escape {
+            bindings = <&kp ESC>;
+            key-positions = <38 39>;
+        };
+    };
 
     //
 
@@ -43,10 +50,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&none  &kp N1            &kp N2  &kp N3    &kp N4  &kp N5       &kp N6   &kp N7          &kp N8          &kp N9           &kp N0     &none
-&none  &kp LEFT_CONTROL  &none   &none     &none   &none        &none    &none           &kp UP_ARROW    &none            &kp MINUS  &none
-&none  &none             &none   &none     &none   &none        &none    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp EQUAL  &none
-                                 &kp LGUI  &trans  &kp SPACE    &kp RET  &trans          &kp ESC
+&none  &kp N1            &kp N2  &kp N3  &kp N4  &kp N5       &kp N6          &kp N7          &kp N8           &kp N9   &kp N0     &none
+&none  &kp LEFT_CONTROL  &none   &none   &none   &none        &none           &kp UP_ARROW    &kp LEFT_ALT     &kp TAB  &kp MINUS  &none
+&none  &none             &none   &none   &none   &none        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none    &kp EQUAL  &none
+                                 &trans  &trans  &kp SPACE    &kp RET         &trans          &trans
             >;
         };
 
@@ -61,9 +68,9 @@
 
             bindings = <
 &none  &kp EXCL  &kp DOUBLE_QUOTES  &kp HASH        &kp DLLR         &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK          &kp LEFT_PARENTHESIS  &kp RPAR        &none
-&none  &trans    &trans             &kp UP_ARROW    &trans           &kp GRAVE    &kp SEMI   &kp HASH   &kp LBKT           &kp RBKT              &kp UNDERSCORE  &none
-&none  &trans    &kp LEFT_ARROW     &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp AT       &kp COLON  &kp TILDE  &kp LBRC           &kp RBRC              &kp PLUS        &none
-                                    &kp LGUI        &trans           &kp SPACE    &kp RET    &trans     &kp RIGHT_CONTROL
+&none  &none     &none              &kp UP_ARROW    &none            &kp GRAVE    &kp SEMI   &kp HASH   &kp LBKT           &kp RBKT              &kp UNDERSCORE  &none
+&none  &none     &kp LEFT_ARROW     &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp AT       &kp COLON  &kp TILDE  &kp LBRC           &kp RBRC              &kp PLUS        &none
+                                    &trans          &trans           &kp SPACE    &kp RET    &trans     &kp RIGHT_CONTROL
             >;
         };
 
@@ -71,8 +78,8 @@
             display-name = "System";
             bindings = <
 &none  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &none
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &kp F11  &none
-&none  &bt BT_CLR    &none         &none         &none         &none           &trans  &trans  &trans  &trans  &kp F12  &none
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none   &none   &none   &none   &kp F11  &none
+&none  &bt BT_CLR    &none         &none         &none         &none           &none   &none   &none   &none   &kp F12  &none
                                    &trans        &trans        &trans          &trans  &trans  &trans
             >;
         };
