@@ -67,19 +67,19 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp EXCL  &kp DOUBLE_QUOTES  &kp HASH        &kp DLLR         &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK          &kp LEFT_PARENTHESIS  &kp RPAR        &none
-&none  &none     &none              &kp UP_ARROW    &none            &kp GRAVE    &kp SEMI   &kp HASH   &kp LBKT           &kp RBKT              &kp UNDERSCORE  &none
-&none  &none     &kp LEFT_ARROW     &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp AT       &kp COLON  &kp TILDE  &kp LBRC           &kp RBRC              &kp PLUS        &none
-                                    &kp LEFT_WIN    &trans           &kp SPACE    &kp RET    &trans     &kp RIGHT_CONTROL
+&none  &kp EXCL        &kp DOUBLE_QUOTES  &kp HASH         &kp DLLR      &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK          &kp LEFT_PARENTHESIS  &kp RPAR        &none
+&none  &none           &kp UP_ARROW       &none            &kp QUESTION  &kp GRAVE    &kp SEMI   &kp HASH   &kp LBKT           &kp RBKT              &kp UNDERSCORE  &none
+&none  &kp LEFT_ARROW  &kp DOWN_ARROW     &kp RIGHT_ARROW  &kp SLASH     &kp AT       &kp COLON  &kp TILDE  &kp LBRC           &kp RBRC              &kp PLUS        &none
+                                          &kp LEFT_WIN     &trans        &kp SPACE    &kp RET    &trans     &kp RIGHT_CONTROL
             >;
         };
 
         ADJ {
             display-name = "ADJ";
             bindings = <
-&none  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6  &kp F7  &kp F8  &kp F9         &kp F10  &none
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none   &none   &none   &none          &kp F11  &none
-&none  &bt BT_CLR    &none         &none         &none         &none           &none   &none   &none   &kp RIGHT_ALT  &kp F12  &none
+&none  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6  &kp F7  &kp F8  &kp F9        &kp F10  &none
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none   &none   &none   &none         &kp F11  &none
+&none  &bt BT_CLR    &none         &none         &none         &none           &none   &none   &none   &kp LEFT_ALT  &kp F12  &none
                                    &trans        &trans        &trans          &trans  &trans  &trans
             >;
         };
